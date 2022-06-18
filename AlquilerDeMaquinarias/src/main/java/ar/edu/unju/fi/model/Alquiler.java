@@ -34,7 +34,7 @@ public class Alquiler {
 	private Integer idAlquiler;
 	
 	@Column(name = "fecha_alquiler")
-	private LocalDateTime fehaAlquiler = LocalDateTime.now();
+	private String fechaAlquiler;
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cliente_id")
@@ -44,9 +44,9 @@ public class Alquiler {
 	@JoinColumn(name = "maquinaria_id")
 	private Maquinaria maquinaria;
 	
-	@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+	//@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
 	@Column(name = "fecha_devolucion")
-	private Date fechaDevolucion;
+	private String fechaDevolucion;
 	
 	@Column(name = "precio")
 	private Double precio;
@@ -70,11 +70,11 @@ public class Alquiler {
 	 * @param fechaDevolucion
 	 * @param precio
 	 */
-	public Alquiler(Integer idAlquiler, LocalDateTime fehaAlquiler, Cliente cliente, Maquinaria maquinaria,
-			Date fechaDevolucion, Double precio) {
+	public Alquiler(Integer idAlquiler, String fechaAlquiler, Cliente cliente, Maquinaria maquinaria,
+			String fechaDevolucion, Double precio) {
 		super();
 		this.idAlquiler = idAlquiler;
-		this.fehaAlquiler = fehaAlquiler;
+		this.fechaAlquiler = fechaAlquiler;
 		this.cliente = cliente;
 		this.maquinaria = maquinaria;
 		this.fechaDevolucion = fechaDevolucion;

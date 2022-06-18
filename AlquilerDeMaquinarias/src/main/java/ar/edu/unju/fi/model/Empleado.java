@@ -50,9 +50,9 @@ public class Empleado{
 	@JoinColumn(name = "cargo_id")
 	private Cargo cargo;
 	
-	@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+	//@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
 	@Column(name = "fecha_de_alta")
-	private LocalDateTime fechaAlta = LocalDateTime.now();
+	private String fechaAlta;
 	
 	
 	/**
@@ -74,7 +74,7 @@ public class Empleado{
 	 * @param fechaAlta
 	 */
 	public Empleado(Integer idEmpleado, String apellido, String nombre, String tipoDocumento, String numDocumento,
-			String telefono, Cargo cargo, LocalDateTime fechaAlta) {
+			String telefono, Cargo cargo, String fechaAlta) {
 		super();
 		this.idEmpleado = idEmpleado;
 		this.apellido = apellido;

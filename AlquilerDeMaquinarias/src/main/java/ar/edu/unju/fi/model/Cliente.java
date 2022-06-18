@@ -54,9 +54,9 @@ public class Cliente{
 	@Column(name = "direccion")
 	private String direccion;
 	
-	@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
+	//@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
 	@Column(name = "fecha_de_alta")
-	private LocalDateTime fechaAlta = LocalDateTime.now();
+	private String fechaAlta;
 	
 	@OneToOne(mappedBy = "cliente",cascade = CascadeType.ALL)
 	private Alquiler alquiler;
@@ -82,7 +82,7 @@ public class Cliente{
 	 * @param fechaAlta
 	 */
 	public Cliente(Integer idCliente, String apellido, String nombre, String tipoDocumento, String numDocumento,
-			String telefono, String razonSocial, String codigoPostal, String direccion, LocalDateTime fechaAlta) {
+			String telefono, String razonSocial, String codigoPostal, String direccion, String fechaAlta) {
 		super();
 		this.idCliente = idCliente;
 		this.apellido = apellido;

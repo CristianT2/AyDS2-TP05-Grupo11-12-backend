@@ -17,9 +17,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString
-@Setter
-@Getter
+
 @Component
 @Entity
 @Table(name = "MAQUINARIAS")
@@ -35,9 +33,9 @@ public class Maquinaria {
 	@Column(name = "modelo")
 	private String modelo;
 	
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	//@DateTimeFormat(pattern = "dd-MM-yyyy")
 	@Column(name = "fecha_adquisicion")
-	private Date fechaAdquisicion;
+	private String fechaAdquisicion;
 	
 	@Column(name = "estado")
 	private String estado;
@@ -68,7 +66,7 @@ public class Maquinaria {
 	 * @param estado
 	 * @param imagen
 	 */
-	public Maquinaria(String codigo, String marca, String modelo, Date fechaAdquisicion, String estado, String imagen) {
+	public Maquinaria(String codigo, String marca, String modelo, String fechaAdquisicion, String estado, String imagen) {
 		super();
 		this.codigo = codigo;
 		this.marca = marca;
@@ -130,7 +128,7 @@ public class Maquinaria {
 	/**
 	 * @return the fechaAdquisicion
 	 */
-	public Date getFechaAdquisicion() {
+	public String getFechaAdquisicion() {
 		return fechaAdquisicion;
 	}
 
@@ -138,7 +136,7 @@ public class Maquinaria {
 	/**
 	 * @param fechaAdquisicion the fechaAdquisicion to set
 	 */
-	public void setFechaAdquisicion(Date fechaAdquisicion) {
+	public void setFechaAdquisicion(String fechaAdquisicion) {
 		this.fechaAdquisicion = fechaAdquisicion;
 	}
 

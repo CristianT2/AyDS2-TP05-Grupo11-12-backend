@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import ar.edu.unju.fi.service.IAlquilerService;
 import ar.edu.unju.fi.service.IClienteService;
 import ar.edu.unju.fi.service.IMaquinariaService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 public class AlquilerController {
 
@@ -65,9 +67,10 @@ public class AlquilerController {
 			String msj = "El objeto se ha guardado correctamente en la base de datos.";
 			model.addAttribute("mensaje", msj);
 			model.addAttribute("alquiler", alquilerService.getAlquiler());
-			alquilerService.addAlquiler(alquiler);
+		
 			modelView.addObject("maquinarias", maquinariaService.getAllMaquinaria());
 			modelView.addObject("clientes", clienteService.getAllCliente());
+			alquilerService.addAlquiler(alquiler);
 			return modelView;
 		}
 	}

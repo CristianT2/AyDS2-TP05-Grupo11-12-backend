@@ -32,9 +32,9 @@ public class Catalogo {
 	private String codigo;
 	
 	@Column(name = "fecha_vigencia")
-	@Temporal(value = TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
-	private Date fechaVigencia;
+	//@Temporal(value = TemporalType.DATE)
+	//@DateTimeFormat(pattern = "dd-MM-yyyy")
+	private String fechaVigencia;
 	
 	@Column(name = "descripcion")
 	private String descripcion;
@@ -58,7 +58,7 @@ public class Catalogo {
 	 * @param descripcion
 	 * @param maquinaria
 	 */
-	public Catalogo(String codigo, Date fechaVigencia, String descripcion, Maquinaria maquinaria) {
+	public Catalogo(String codigo, String fechaVigencia, String descripcion, Maquinaria maquinaria) {
 		super();
 		this.codigo = codigo;
 		this.fechaVigencia = fechaVigencia;

@@ -44,7 +44,7 @@ public class Maquinaria {
 	private String imagen;
 	
 	@OneToMany(mappedBy = "maquinaria", cascade = CascadeType.ALL)
-	private List<Catalogo> catalogo;
+	private List<Catalogo> categoria;
 	
 	@OneToOne(mappedBy = "maquinaria",cascade = CascadeType.ALL)
 	private Alquiler alquiler;

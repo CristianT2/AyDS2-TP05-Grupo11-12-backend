@@ -1,6 +1,5 @@
 package ar.edu.unju.fi.model;
 
-import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,16 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@ToString
-@Getter
-@Setter
 @Component
 @Entity
 @Table(name = "CLIENTES")
@@ -88,14 +79,160 @@ public class Cliente{
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.tipoDocumento = tipoDocumento;
-		NumDocumento = numDocumento;
+		this.NumDocumento = numDocumento;
 		this.telefono = telefono;
 		this.razonSocial = razonSocial;
 		this.codigoPostal = codigoPostal;
 		this.direccion = direccion;
 		this.fechaAlta = fechaAlta;
 	}
-	
-	
+
+	/**
+	 * @return the idCliente
+	 */
+	public Integer getIdCliente() {
+		return idCliente;
+	}
+
+	/**
+	 * @param idCliente the idCliente to set
+	 */
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	/**
+	 * @return the apellido
+	 */
+	public String getApellido() {
+		return apellido;
+	}
+
+	/**
+	 * @param apellido the apellido to set
+	 */
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/**
+	 * @return the tipoDocumento
+	 */
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+	/**
+	 * @param tipoDocumento the tipoDocumento to set
+	 */
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+
+	/**
+	 * @return the numDocumento
+	 */
+	public String getNumDocumento() {
+		return NumDocumento;
+	}
+
+	/**
+	 * @param numDocumento the numDocumento to set
+	 */
+	public void setNumDocumento(String numDocumento) {
+		NumDocumento = numDocumento;
+	}
+
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+
+	/**
+	 * @param telefono the telefono to set
+	 */
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	/**
+	 * @return the razonSocial
+	 */
+	public String getRazonSocial() {
+		return razonSocial;
+	}
+
+	/**
+	 * @param razonSocial the razonSocial to set
+	 */
+	public void setRazonSocial(String razonSocial) {
+		this.razonSocial = razonSocial;
+	}
+
+	/**
+	 * @return the codigoPostal
+	 */
+	public String getCodigoPostal() {
+		return codigoPostal;
+	}
+
+	/**
+	 * @param codigoPostal the codigoPostal to set
+	 */
+	public void setCodigoPostal(String codigoPostal) {
+		this.codigoPostal = codigoPostal;
+	}
+
+	/**
+	 * @return the direccion
+	 */
+	public String getDireccion() {
+		return direccion;
+	}
+
+	/**
+	 * @param direccion the direccion to set
+	 */
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	/**
+	 * @return the fechaAlta
+	 */
+	public String getFechaAlta() {
+		return fechaAlta;
+	}
+
+	/**
+	 * @param fechaAlta the fechaAlta to set
+	 */
+	public void setFechaAlta(String fechaAlta) {
+		this.fechaAlta = fechaAlta;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", apellido=" + apellido + ", nombre=" + nombre + ", tipoDocumento="
+				+ tipoDocumento + ", NumDocumento=" + NumDocumento + ", telefono=" + telefono + ", razonSocial="
+				+ razonSocial + ", codigoPostal=" + codigoPostal + ", direccion=" + direccion + ", fechaAlta="
+				+ fechaAlta + "]";
+	}
 	
 }

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.fi.model.Catalogo;
@@ -28,8 +30,8 @@ public class CatalogoController {
 		return "nuevocatalogo";
 	}
 	
-	@PostMapping("catalogo/guardar")
-	public ModelAndView guardarCatalogo(Model model, @ModelAttribute("catalogo") Catalogo catalogo, BindingResult result){
+	@PostMapping("/catalogo/guardar")
+	public ModelAndView guardarCatalogo(Model model, @RequestParam("file") MultipartFile file, @ModelAttribute("catalogo") Catalogo catalogo, BindingResult result){
 		
 		ModelAndView modelView;
 		
@@ -42,7 +44,7 @@ public class CatalogoController {
 			String msj = "El objeto se guardó correctamente en la base de datos.";
 			model.addAttribute("mensaje", msj);
 			model.addAttribute("catalogo", catalogoService.getCatalogo());
-			catalogoService.addCatalogo(catalogo);
+			catalogoService.addCatalogo(file, catalogo);
 			
 			return modelView;
 		}

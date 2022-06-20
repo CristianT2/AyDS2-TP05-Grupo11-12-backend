@@ -13,14 +13,7 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-
-@ToString
-@Setter
-@Getter
 @Component
 @Entity
 @Table(name = "CARGOS")
@@ -59,4 +52,53 @@ public class Cargo {
 		this.descripcion = descripcion;
 	}
 
+	/**
+	 * @return the idCargo
+	 */
+	public Integer getIdCargo() {
+		return idCargo;
+	}
+
+	/**
+	 * @param idCargo the idCargo to set
+	 */
+	public void setIdCargo(Integer idCargo) {
+		this.idCargo = idCargo;
+	}
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/**
+	 * @return the descripcion
+	 */
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	/**
+	 * @param descripcion the descripcion to set
+	 */
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	@Override
+	public String toString() {
+		return "Cargo [idCargo=" + idCargo + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
+	}
+
+	
+	
 }

@@ -1,6 +1,5 @@
 package ar.edu.unju.fi.model;
 
-import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,16 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@ToString
-@Getter
-@Setter
 @Component
 @Entity
 @Table(name = "EMPLEADOS")
@@ -85,5 +76,141 @@ public class Empleado{
 		this.cargo = cargo;
 		this.fechaAlta = fechaAlta;
 	}
-	
+
+
+	/**
+	 * @return the idEmpleado
+	 */
+	public Integer getIdEmpleado() {
+		return idEmpleado;
+	}
+
+
+	/**
+	 * @param idEmpleado the idEmpleado to set
+	 */
+	public void setIdEmpleado(Integer idEmpleado) {
+		this.idEmpleado = idEmpleado;
+	}
+
+
+	/**
+	 * @return the apellido
+	 */
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	/**
+	 * @param apellido the apellido to set
+	 */
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	/**
+	 * @return the tipoDocumento
+	 */
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+
+	/**
+	 * @param tipoDocumento the tipoDocumento to set
+	 */
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+
+
+	/**
+	 * @return the numDocumento
+	 */
+	public String getNumDocumento() {
+		return NumDocumento;
+	}
+
+
+	/**
+	 * @param numDocumento the numDocumento to set
+	 */
+	public void setNumDocumento(String numDocumento) {
+		NumDocumento = numDocumento;
+	}
+
+
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	/**
+	 * @param telefono the telefono to set
+	 */
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+
+	/**
+	 * @return the cargo
+	 */
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+
+	/**
+	 * @param cargo the cargo to set
+	 */
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+
+
+	/**
+	 * @return the fechaAlta
+	 */
+	public String getFechaAlta() {
+		return fechaAlta;
+	}
+
+
+	/**
+	 * @param fechaAlta the fechaAlta to set
+	 */
+	public void setFechaAlta(String fechaAlta) {
+		this.fechaAlta = fechaAlta;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Empleado [idEmpleado=" + idEmpleado + ", apellido=" + apellido + ", nombre=" + nombre
+				+ ", tipoDocumento=" + tipoDocumento + ", NumDocumento=" + NumDocumento + ", telefono=" + telefono
+				+ ", cargo=" + cargo + ", fechaAlta=" + fechaAlta + "]";
+	}
+
 }

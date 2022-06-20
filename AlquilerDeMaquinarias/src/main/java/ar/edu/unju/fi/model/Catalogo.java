@@ -1,6 +1,6 @@
 package ar.edu.unju.fi.model;
 
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,19 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import org.springframework.format.annotation.DateTimeFormat;
+
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@ToString
-@Setter
-@Getter
 @Component
 @Entity
 @Table(name = "CATALOGOS")
@@ -88,7 +80,6 @@ public class Catalogo {
 		this.codigo = codigo;
 	}
 
-
 	/**
 	 * @return the fechaVigencia
 	 */
@@ -136,6 +127,9 @@ public class Catalogo {
 		this.imagen = imagen;
 	}
 
-	
-	
+	@Override
+	public String toString() {
+		return "Catalogo [codigo=" + codigo + ", fechaVigencia=" + fechaVigencia + ", descripcion=" + descripcion
+				+ ", imagen=" + imagen + "]";
+	}
 }

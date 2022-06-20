@@ -1,6 +1,6 @@
 package ar.edu.unju.fi.model;
 
-import java.util.Date;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,12 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
 
 @Component
@@ -23,6 +19,7 @@ import lombok.ToString;
 @Table(name = "MAQUINARIAS")
 public class Maquinaria {
 	
+
 	@Id
 	@Column(name = "codigo")
 	private String codigo;
@@ -172,8 +169,10 @@ public class Maquinaria {
 		this.imagen = imagen;
 	}
 	
-	
-	
-
+	@Override
+	public String toString() {
+		return "Maquinaria [codigo=" + codigo + ", marca=" + marca + ", modelo=" + modelo + ", fechaAdquisicion="
+				+ fechaAdquisicion + ", estado=" + estado + ", imagen=" + imagen + "]";
+	}
 	
 }
